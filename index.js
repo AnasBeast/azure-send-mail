@@ -6,7 +6,6 @@ const app = express();
 const port = 3000;
 
 app.use(cors());
-
 app.use(express.json());
 
 app.get('/', (req, res) => {
@@ -27,3 +26,6 @@ app.post('/send-email', async (req, res) => {
 app.listen(port, () => {
     console.log(`app listening at http://localhost:${port}`);
 });
+
+// export the app for vercel serverless functions
+export default app;
